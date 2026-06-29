@@ -16,15 +16,7 @@ public class KeyBindings {
     public static final String KEY_CATEGORY_TURBODROP = "key.categories.turbodrop";
 
     public static final Lazy<KeyMapping> EMPTY_STORAGE_KEY = Lazy.of(() -> {
-        int defaultKey = GLFW.GLFW_KEY_Q;
-        try {
-            // Tenter de recuperer la touche de drop configuree par l'utilisateur dans Minecraft
-            var options = net.minecraft.client.Minecraft.getInstance().options;
-            if (options != null && options.keyDrop != null && options.keyDrop.getKey() != null) {
-                defaultKey = options.keyDrop.getKey().getValue();
-            }
-        } catch (Throwable ignored) {}
-
+        int defaultKey = parseVanillaDropKey();
         return new KeyMapping(
                 "key.turbodrop.empty_storage",
                 KeyConflictContext.UNIVERSAL,
@@ -36,14 +28,7 @@ public class KeyBindings {
     });
 
     public static final Lazy<KeyMapping> DROP_SLOT_KEY = Lazy.of(() -> {
-        int defaultKey = GLFW.GLFW_KEY_Q;
-        try {
-            var options = net.minecraft.client.Minecraft.getInstance().options;
-            if (options != null && options.keyDrop != null && options.keyDrop.getKey() != null) {
-                defaultKey = options.keyDrop.getKey().getValue();
-            }
-        } catch (Throwable ignored) {}
-
+        int defaultKey = parseVanillaDropKey();
         return new KeyMapping(
                 "key.turbodrop.drop_slot",
                 KeyConflictContext.GUI,
@@ -54,6 +39,21 @@ public class KeyBindings {
         );
     });
 
+    private static int parseVanillaDropKey() {
+        java.io.File optionsFile = new java.io.File("options.txt");
+        if (optionsFile.exists()) {
+            try (java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader(optionsFile))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    if (line.startsWith("key_key.drop:")) {
+                        String value = line.substring("key_key.drop:".length()).trim();
+                        return InputConstants.getKey(value).getValue();
+                    }
+                }
+            } catch (Exception ignored) {}
+        }
+        return GLFW.GLFW_KEY_Q; // Par defaut Q (A sur AZERTY physique)
+    }
 
     @SubscribeEvent
     public static void registerKeys(final RegisterKeyMappingsEvent event) {
