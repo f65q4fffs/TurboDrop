@@ -75,7 +75,16 @@ fr.turbodrop.mod
 ### 4. Configuration en jeu (User-Friendly)
 - Toutes les variables de configuration doivent posséder une clé de traduction `.translation(...)` déclarée dans `en_us.json` et `fr_fr.json`.
 
+### 5. Gestion des Versions & Nommage (SemVer)
+- Utiliser le format `MAJOR.MINOR.PATCH` (SemVer) pour le suivi du projet.
+  - **MAJOR :** Changements incompatibles ou restructurations majeures.
+  - **MINOR :** Nouvelles fonctionnalités rétrocompatibles (ex: intégration de Configured, drop de slot, etc.).
+  - **PATCH :** Corrections de bugs rétrocompatibles (ex: correction des conflits de touches).
+- Le fichier compilé doit suivre le nommage `turbodrop-[VERSION].jar`.
+- Les versions sont configurées uniquement dans `gradle.properties` via `mod_version`.
+
 ---
+
 
 ## 📋 Roadmap & État d'Avancement
 
