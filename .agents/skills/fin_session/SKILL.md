@@ -15,7 +15,8 @@ Lorsque l'utilisateur demande une fin de session ou invoque cette directive, eff
   - **Sections par fonctionnalité** avec des listes à puces.
   - **Pour chaque fichier modifié :** expliquer brièvement ce qui a changé et pourquoi.
   - **Signature de co-auteur :** ajouter `Co-authored-by: [Nom de l'Agent] <[Email de l'Agent]>` en remplaçant par les informations réelles de l'assistant AI actif (ex: `Antigravity <antigravity@gemini.google>` pour l'agent Antigravity).
-- Pousse le commit sur la branche principale distante via `git push origin main`.
+- Pousse le commit sur la branche principale distante via `git push origin main` *(sauf si l'utilisateur a explicitement demandé de ne pas pousser dans son message de fin de session)*.
+
 
 ## 2. Résumé de Session (Format Copiable)
 Rédige un résumé complet de la session sous forme d'**un seul bloc de code brut (``` ```)**. Ce format permet à l'utilisateur de cliquer sur "Copier" directement pour le conserver.

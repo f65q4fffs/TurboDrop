@@ -101,5 +101,7 @@ fr.turbodrop.mod
 2. **Poser des questions à l'utilisateur** pour chaque étape impliquant un choix technique, ergonomique ou esthétique avant d'exécuter les modifications.
 3. **Mettre à jour la Roadmap** (dans ce fichier) après chaque étape complétée ou modification demandée.
 4. **Vérifier et compiler** le code à chaque étape avant de le copier vers le dossier de mods CurseForge.
-5. **Fin de session :** Dès que l'utilisateur annonce une fin de session, lire et appliquer immédiatement les instructions du Skill `fin-session` (`.agents/skills/fin_session/SKILL.md`).
+5. **Ne jamais faire de `git push`** durant le développement sans accord explicite. *(Exception : lors d'une fin de session via le Skill `fin-session` où le push est autorisé par défaut).*
+6. **Fin de session :** Dès que l'utilisateur annonce une fin de session, lire et appliquer immédiatement les instructions du Skill `fin-session` (`.agents/skills/fin_session/SKILL.md`).
+
 
