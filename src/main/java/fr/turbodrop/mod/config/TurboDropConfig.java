@@ -14,12 +14,7 @@ public class TurboDropConfig {
     public static final ModConfigSpec.ConfigValue<String> MOUSE_SHORTCUT_MODIFIER;
 
     // Drop de case unique
-    public enum SlotDropBehavior {
-        ALL,
-        VANILLA_STACK,
-        CUSTOM_LIMIT
-    }
-    public static final ModConfigSpec.EnumValue<SlotDropBehavior> SLOT_DROP_BEHAVIOR;
+    public static final ModConfigSpec.ConfigValue<String> SLOT_DROP_BEHAVIOR;
     public static final ModConfigSpec.IntValue CUSTOM_SLOT_DROP_LIMIT;
 
     static {
@@ -51,7 +46,7 @@ public class TurboDropConfig {
                          "VANILLA_STACK - Vide au maximum la taille d'un stack d'origine (ex: 16 pour enderpearls, 64 pour de la terre)\n" +
                          "CUSTOM_LIMIT - Vide au maximum la quantite de customSlotDropLimit")
                 .translation("config.turbodrop.slot_drop_behavior")
-                .defineEnum("slotDropBehavior", SlotDropBehavior.ALL);
+                .defineInList("slotDropBehavior", "ALL", java.util.List.of("ALL", "VANILLA_STACK", "CUSTOM_LIMIT"));
 
         CUSTOM_SLOT_DROP_LIMIT = BUILDER
                 .comment("Nombre maximum d'items a drop si slotDropBehavior est a CUSTOM_LIMIT.")
@@ -61,6 +56,7 @@ public class TurboDropConfig {
         BUILDER.pop();
         SPEC = BUILDER.build();
     }
+
 
 
 }
