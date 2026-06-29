@@ -16,7 +16,7 @@ import java.util.List;
 
 public class DropManager {
 
-    public static void handleDropSlotRequest(ServerPlayer player, int containerId, int slotIndex) {
+    public static void handleDropSlotRequest(ServerPlayer player, int containerId, int slotIndex, int countToDrop) {
         if (player == null || !player.isAlive()) {
             return;
         }
@@ -36,16 +36,8 @@ public class DropManager {
         }
 
         ItemStack stack = slot.getItem();
-        int toDrop = stack.getCount();
+        int toDrop = Math.min(stack.getCount(), countToDrop);
 
-        if (!TurboDropConfig.DROP_ENTIRE_SLOT.get()) {
-            if (TurboDropConfig.USE_VANILLA_MAX_STACK.get()) {
-                toDrop = Math.min(toDrop, stack.getMaxStackSize());
-            } else {
-                int limit = TurboDropConfig.CUSTOM_DROP_LIMIT.get();
-                toDrop = Math.min(toDrop, limit);
-            }
-        }
 
 
 

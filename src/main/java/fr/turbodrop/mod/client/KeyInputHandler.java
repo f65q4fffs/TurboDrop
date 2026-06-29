@@ -13,7 +13,9 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.BlockHitResult;
+
 import net.minecraft.world.phys.HitResult;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -162,7 +164,21 @@ public class KeyInputHandler {
     private static void triggerDropSlot(AbstractContainerScreen<?> containerScreen, Slot slot) {
         if (slot != null && slot.hasItem()) {
             int containerId = containerScreen.getMenu().containerId;
-            PacketDistributor.sendToServer(new DropSlotPayload(containerId, slot.index));
+            ItemStack stack = slot.getItem();
+            int toDrop = stack.getCount();
+
+            if (!TurboDropConfig.DROP_ENTIRE_SLOT.get()) {
+                if (TurboDropConfig.USE_VANILLA_MAX_STACK.get()) {
+                    toDrop = Math.min(toDrop, stack.getMaxStackSize());
+                } else {
+                    int limit = TurboDropConfig.CUSTOM_DROP_LIMIT.get();
+                    toDrop = Math.min(toDrop, limit);
+                }
+            }
+
+            if (toDrop > 0) {
+                PacketDistributor.sendToServer(new DropSlotPayload(containerId, slot.index, toDrop));
+            }
         }
     }
 }

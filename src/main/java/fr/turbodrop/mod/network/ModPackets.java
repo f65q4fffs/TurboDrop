@@ -44,7 +44,7 @@ public class ModPackets {
             // Execution de maniere securisee sur le thread principal du serveur
             var player = context.player();
             if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer) {
-                fr.turbodrop.mod.server.DropManager.handleDropSlotRequest(serverPlayer, payload.containerId(), payload.slotIndex());
+                fr.turbodrop.mod.server.DropManager.handleDropSlotRequest(serverPlayer, payload.containerId(), payload.slotIndex(), payload.countToDrop());
             }
         });
     }
