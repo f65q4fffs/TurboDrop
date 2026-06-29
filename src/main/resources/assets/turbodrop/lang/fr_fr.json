@@ -1,0 +1,15 @@
+{
+  "key.categories.turbodrop": "TurboDrop",
+  "key.turbodrop.empty_storage": "Vider le stockage",
+  "key.turbodrop.drop_slot": "Drop la case survolée",
+  "gui.turbodrop.confirmation.title": "Confirmation de Vidage",
+  "gui.turbodrop.confirmation.message": "Voulez-vous vraiment vider le stockage : %s ?",
+  "config.turbodrop.max_stacks_per_tick": "Nombre Max de Stacks par Tick",
+  "config.turbodrop.enable_confirmation": "Activer la Confirmation",
+  "config.turbodrop.enable_mouse_shortcut": "Activer le Raccourci Souris",
+  "config.turbodrop.mouse_shortcut_modifier": "Touche Modificatrice Souris",
+  "config.turbodrop.slot_drop_behavior": "Mode de Drop de Case Unique",
+  "config.turbodrop.custom_slot_drop_limit": "Limite de Drop Personnalisée"
+}
+
+

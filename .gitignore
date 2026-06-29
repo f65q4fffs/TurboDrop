@@ -1,0 +1,18 @@
+# Gradle files
+.gradle/
+build/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Local custom JDK & Gradle distributions
+temp_gradle/
+
+# Operating System files
+thumbs.db
+.DS_Store
+*.log

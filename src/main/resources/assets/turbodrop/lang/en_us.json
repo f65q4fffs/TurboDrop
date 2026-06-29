@@ -1,0 +1,15 @@
+{
+  "key.categories.turbodrop": "TurboDrop",
+  "key.turbodrop.empty_storage": "Empty Storage",
+  "key.turbodrop.drop_slot": "Drop Hovered Slot",
+  "gui.turbodrop.confirmation.title": "Confirm Storage Ejection",
+  "gui.turbodrop.confirmation.message": "Are you sure you want to empty the storage: %s?",
+  "config.turbodrop.max_stacks_per_tick": "Max Stacks Per Tick",
+  "config.turbodrop.enable_confirmation": "Enable Confirmation Popup",
+  "config.turbodrop.enable_mouse_shortcut": "Enable Mouse Click Shortcut",
+  "config.turbodrop.mouse_shortcut_modifier": "Mouse Modifier Key",
+  "config.turbodrop.slot_drop_behavior": "Hovered Slot Drop Mode",
+  "config.turbodrop.custom_slot_drop_limit": "Custom Slot Drop Limit"
+}
+
+
