@@ -36,15 +36,17 @@ public class DropManager {
         }
 
         ItemStack stack = slot.getItem();
-        String behavior = TurboDropConfig.SLOT_DROP_BEHAVIOR.get();
         int toDrop = stack.getCount();
 
-        if ("VANILLA_STACK".equals(behavior)) {
-            toDrop = Math.min(toDrop, stack.getMaxStackSize());
-        } else if ("CUSTOM_LIMIT".equals(behavior)) {
-            int limit = TurboDropConfig.CUSTOM_SLOT_DROP_LIMIT.get();
-            toDrop = Math.min(toDrop, limit);
+        if (!TurboDropConfig.DROP_ENTIRE_SLOT.get()) {
+            if (TurboDropConfig.USE_VANILLA_MAX_STACK.get()) {
+                toDrop = Math.min(toDrop, stack.getMaxStackSize());
+            } else {
+                int limit = TurboDropConfig.CUSTOM_DROP_LIMIT.get();
+                toDrop = Math.min(toDrop, limit);
+            }
         }
+
 
 
 

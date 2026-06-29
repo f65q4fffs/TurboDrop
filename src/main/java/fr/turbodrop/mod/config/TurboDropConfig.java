@@ -13,9 +13,10 @@ public class TurboDropConfig {
     public static final ModConfigSpec.BooleanValue ENABLE_MOUSE_SHORTCUT;
     public static final ModConfigSpec.ConfigValue<String> MOUSE_SHORTCUT_MODIFIER;
 
-    // Drop de case unique
-    public static final ModConfigSpec.ConfigValue<String> SLOT_DROP_BEHAVIOR;
-    public static final ModConfigSpec.IntValue CUSTOM_SLOT_DROP_LIMIT;
+    // Drop de case unique (Option A)
+    public static final ModConfigSpec.BooleanValue DROP_ENTIRE_SLOT;
+    public static final ModConfigSpec.BooleanValue USE_VANILLA_MAX_STACK;
+    public static final ModConfigSpec.IntValue CUSTOM_DROP_LIMIT;
 
     static {
         BUILDER.push("General");
@@ -40,22 +41,25 @@ public class TurboDropConfig {
                 .translation("config.turbodrop.mouse_shortcut_modifier")
                 .define("mouseShortcutModifier", "ALT");
 
-        SLOT_DROP_BEHAVIOR = BUILDER
-                .comment("Comportement lors du drop d'une seule case survolée. Valeurs possibles :\n" +
-                         "ALL - Vide tout d'un coup (même si > 64)\n" +
-                         "VANILLA_STACK - Vide au maximum la taille d'un stack d'origine (ex: 16 pour enderpearls, 64 pour de la terre)\n" +
-                         "CUSTOM_LIMIT - Vide au maximum la quantite de customSlotDropLimit")
-                .translation("config.turbodrop.slot_drop_behavior")
-                .defineInList("slotDropBehavior", "ALL", java.util.List.of("ALL", "VANILLA_STACK", "CUSTOM_LIMIT"));
+        DROP_ENTIRE_SLOT = BUILDER
+                .comment("Jeter l'integralite de la case (mode ALL). Si False, utilise les options ci-dessous.")
+                .translation("config.turbodrop.drop_entire_slot")
+                .define("dropEntireSlot", true);
 
-        CUSTOM_SLOT_DROP_LIMIT = BUILDER
-                .comment("Nombre maximum d'items a drop si slotDropBehavior est a CUSTOM_LIMIT.")
-                .translation("config.turbodrop.custom_slot_drop_limit")
-                .defineInRange("customSlotDropLimit", 64, 1, 1000000);
+        USE_VANILLA_MAX_STACK = BUILDER
+                .comment("Jeter au maximum la taille d'un stack d'origine (ex: 16 pour enderpearls, 64 pour de la terre).")
+                .translation("config.turbodrop.use_vanilla_max_stack")
+                .define("useVanillaMaxStack", false);
+
+        CUSTOM_DROP_LIMIT = BUILDER
+                .comment("Quantite maximale a jeter si dropEntireSlot et useVanillaMaxStack sont a False.")
+                .translation("config.turbodrop.custom_drop_limit")
+                .defineInRange("customDropLimit", 64, 1, 1000000);
 
         BUILDER.pop();
         SPEC = BUILDER.build();
     }
+
 
 
 

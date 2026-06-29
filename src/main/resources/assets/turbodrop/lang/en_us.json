@@ -8,8 +8,9 @@
   "config.turbodrop.enable_confirmation": "Enable Confirmation Popup",
   "config.turbodrop.enable_mouse_shortcut": "Enable Mouse Click Shortcut",
   "config.turbodrop.mouse_shortcut_modifier": "Mouse Modifier Key",
-  "config.turbodrop.slot_drop_behavior": "Hovered Slot Drop Mode",
-  "config.turbodrop.custom_slot_drop_limit": "Custom Slot Drop Limit"
+  "config.turbodrop.drop_entire_slot": "Drop Entire Slot (ALL)",
+  "config.turbodrop.use_vanilla_max_stack": "Use Vanilla Stack Limit",
+  "config.turbodrop.custom_drop_limit": "Custom Drop Limit"
 }
 
 

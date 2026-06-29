@@ -8,8 +8,9 @@
   "config.turbodrop.enable_confirmation": "Activer la Confirmation",
   "config.turbodrop.enable_mouse_shortcut": "Activer le Raccourci Souris",
   "config.turbodrop.mouse_shortcut_modifier": "Touche Modificatrice Souris",
-  "config.turbodrop.slot_drop_behavior": "Mode de Drop de Case Unique",
-  "config.turbodrop.custom_slot_drop_limit": "Limite de Drop Personnalisée"
+  "config.turbodrop.drop_entire_slot": "Jeter toute la case (ALL)",
+  "config.turbodrop.use_vanilla_max_stack": "Limite de stack d'origine",
+  "config.turbodrop.custom_drop_limit": "Limite de drop personnalisée"
 }
 
 
