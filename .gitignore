@@ -20,3 +20,7 @@ thumbs.db
 # CurseForge Junction
 CurseForge_Mods/
 
+# Gradle build output Junction
+Sortie_JAR/
+
+
