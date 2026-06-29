@@ -16,3 +16,7 @@ temp_gradle/
 thumbs.db
 .DS_Store
 *.log
+
+# CurseForge Junction
+CurseForge_Mods/
+
