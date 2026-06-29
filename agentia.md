@@ -90,13 +90,17 @@ fr.turbodrop.mod
 
 ### ✅ En place
 - [x] Initialisation complète du projet NeoForge 1.21.1
-- [x] Paquets réseau robustes `DropRequestPayload` et `DropSlotPayload`
+- [x] Paquets réseau robustes `DropRequestPayload` et `DropSlotPayload` (avec `countToDrop` dynamique)
 - [x] Écran de confirmation natif non flouté `ConfirmScreen` et retour propre au coffre après annulation/validation
 - [x] Raccourcis clavier enregistrés et configurables dans le menu Contrôles
-- [x] Alignement dynamique sur la touche drop du joueur à la première installation
-- [x] Boucles d'extraction serveur complètes pour vider l'entièreté d'un slot moddé > 64
+- [x] Alignement dynamique sur la touche drop du joueur à la première installation (sans reset des touches des autres mods via lecture passive de options.txt)
+- [x] Raccourcis et options gérés individuellement côté Client avec calcul local et validation/éjection Serveur (compatible multijoueur)
+- [x] Structure de configuration Option A (boutons ON/OFF stables et saisies numériques sans bug de sauvegarde Configured)
+- [x] Boucles d'extraction serveur complètes pour vider l'entièreté d'un slot moddé > 64 (avec option de limite de stack d'origine `VANILLA_STACK`)
 - [x] Dispersion et éjection réalistes au sol (sans perte ni clipping dans le vide)
 - [x] Traduction complète de l'onglet de configuration Configured en jeu
+- [x] Raccourci `Sortie_JAR` à la racine et Skill de fin de session `fin-session` automatisé
+
 
 ### 🔄 À faire / Pistes futures
 - [ ] Prise en charge du drop par glisser-déplacer (drag & drop) à l'extérieur des inventaires personnalisés
