@@ -100,6 +100,9 @@ fr.turbodrop.mod
 - [x] Dispersion et éjection réalistes au sol (sans perte ni clipping dans le vide)
 - [x] Traduction complète de l'onglet de configuration Configured en jeu
 - [x] Raccourci `Sortie_JAR` à la racine et Skill de fin de session `fin-session` automatisé
+- [x] Licence LGPLv3 (fichiers `LICENSE` et `COPYING.LESSER` officiels intégrés)
+- [x] Fichier `README.md` complet à la racine du projet
+
 
 
 ### 🔄 À faire / Pistes futures
