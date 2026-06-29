@@ -17,10 +17,8 @@ thumbs.db
 .DS_Store
 *.log
 
-# CurseForge Junction
-CurseForge_Mods/
-
 # Gradle build output Junction
 Sortie_JAR/
+
 
 
