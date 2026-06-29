@@ -5,7 +5,8 @@ modLoader="javafml"
 loaderVersion="[4,)"
 
 # The license of your mod
-license="MIT"
+license="LGPLv3"
+
 
 # A list of mods in this file
 [[mods]]
